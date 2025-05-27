@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="montecarlo-mvc:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/montecarlo_mvc_jar</output-path>
+    <root id="archive" name="montecarlo-mvc.jar">
+      <element id="module-output" name="montecarlo-mvc" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/json/json/20230227/json-20230227.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
