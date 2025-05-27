@@ -10,13 +10,11 @@ simulación en un archivo para poder comparar resultados de varias iteraciones.
 
 ## Descarga
 
--
-
-Descargar: [SimuladorMontecarloPI.zip](https://github.com/platiniromina/montecarlo-pi-2.0/releases/download/v1.0.0/SimuladorMontecarloPI.zip)
+- Descargar: [SimuladorMontecarloPI.zip](https://github.com/platiniromina/montecarlo-pi-2.0/releases/download/v1.0.0/SimuladorMontecarloPI.zip)
 
 ## Uso
 
-1. Descomprimir la carpeta descargada
+1. Descomprimir la carpeta descargada.
 2. Ejecutar el archivo `montecarlo-mvc.jar` haciendo doble clic o desde la consola (dentro de la carpeta):
 
    ```bash
