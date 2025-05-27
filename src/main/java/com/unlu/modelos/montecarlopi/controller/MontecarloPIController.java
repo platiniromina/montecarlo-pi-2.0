@@ -3,11 +3,16 @@ package com.unlu.modelos.montecarlopi.controller;
 import com.unlu.modelos.montecarlopi.model.MontecarloPISimulator;
 import com.unlu.modelos.montecarlopi.model.Point;
 import com.unlu.modelos.montecarlopi.view.MontecarloPIView;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.swing.*;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -68,10 +73,28 @@ public class MontecarloPIController {
         json.put("puntos_totales", model.getTotalPoints());
         json.put("tiempo_ms", elapsedTime);
 
-        try (FileWriter file = new FileWriter("resultado.json")) {
-            file.write(json.toString(4));
-        } catch (IOException e) {
+        try {
+            File jarDir = new File(MontecarloPIController.class.getProtectionDomain()
+                    .getCodeSource().getLocation().toURI()).getParentFile();
+            File file = new File(jarDir, "resultado.json");
+
+            JSONArray resultados;
+            if (file.exists()) {
+                String content = new String(Files.readAllBytes(file.toPath()));
+                resultados = new JSONArray(content);
+            } else {
+                resultados = new JSONArray();
+            }
+
+            resultados.put(json);
+
+            try (FileWriter writer = new FileWriter(file)) {
+                writer.write(resultados.toString(4));
+            }
+
+        } catch (IOException | URISyntaxException | JSONException e) {
             e.printStackTrace();
         }
     }
+
 }
