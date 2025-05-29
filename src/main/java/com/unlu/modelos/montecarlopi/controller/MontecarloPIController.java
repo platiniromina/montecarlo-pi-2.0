@@ -49,7 +49,7 @@ public class MontecarloPIController {
             long total = model.getTotalPoints();
 
             SwingUtilities.invokeLater(() -> view.update(puntos, pi, inside, total));
-        }, 0, 5, TimeUnit.MILLISECONDS);
+        }, 0, 1, TimeUnit.MILLISECONDS);
     }
 
     private void stopSimulation() {

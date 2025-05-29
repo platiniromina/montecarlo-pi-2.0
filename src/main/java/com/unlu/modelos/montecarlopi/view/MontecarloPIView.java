@@ -95,7 +95,7 @@ public class MontecarloPIView extends JFrame {
                 for (Point p : points) {
                     int x = (int) ((p.getX() + 1) * size / 2) + offsetX;
                     int y = (int) ((1 - p.getY()) * size / 2) + offsetY;
-                    g2d.setColor(p.isInside() ? Color.GREEN : Color.RED);
+                    g2d.setColor(p.isInside() ? Color.BLUE : Color.RED);
                     g2d.drawLine(x, y, x, y);
                 }
             }
